@@ -1,0 +1,22 @@
+{
+  "name": "flex-grid-system",
+  "version": "1.0.0",
+  "description": "Grid system using Flex and Sass.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdanMoses/flex-grid-system.git"
+  },
+  "author": "Adan Moses",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdanMoses/flex-grid-system/issues"
+  },
+  "homepage": "https://github.com/AdanMoses/flex-grid-system#readme",
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}
