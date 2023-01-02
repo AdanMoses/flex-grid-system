@@ -1,0 +1,318 @@
+.flex-col-8 .flex-children, .flex-col-7 .flex-children, .flex-col-6 .flex-children, .flex-col-5 .flex-children, .flex-col-4 .flex-children, .flex-col-3 .flex-children, .flex-col-2 .flex-children, .flex-col-1 .flex-children {
+  width: 100%;
+  flex: 0 1 calc(var(--fb-row, 25%) * var(--fb-mod, 1) - var(--fb-space, 1rem));
+}
+
+.flex-col-8 .flex-parent, .flex-col-7 .flex-parent, .flex-col-6 .flex-parent, .flex-col-5 .flex-parent, .flex-col-4 .flex-parent, .flex-col-3 .flex-parent, .flex-col-2 .flex-parent, .flex-col-1 .flex-parent {
+  gap: var(--flex-gap, 1rem);
+}
+
+.flex-parent .flex-col-1.flex-children,
+.flex-col-1 .flex-parent .flex-children {
+  --fb-row: 100%/1;
+}
+
+.flex-parent .flex-col-2.flex-children,
+.flex-col-2 .flex-parent .flex-children {
+  --fb-row: 100%/2;
+}
+
+.flex-parent .flex-col-3.flex-children,
+.flex-col-3 .flex-parent .flex-children {
+  --fb-row: 100%/3;
+}
+
+.flex-parent .flex-col-4.flex-children,
+.flex-col-4 .flex-parent .flex-children {
+  --fb-row: 100%/4;
+}
+
+.flex-parent .flex-col-5.flex-children,
+.flex-col-5 .flex-parent .flex-children {
+  --fb-row: 100%/5;
+}
+
+.flex-parent .flex-col-6.flex-children,
+.flex-col-6 .flex-parent .flex-children {
+  --fb-row: 100%/6;
+}
+
+.flex-parent .flex-col-7.flex-children,
+.flex-col-7 .flex-parent .flex-children {
+  --fb-row: 100%/7;
+}
+
+.flex-parent .flex-col-8.flex-children,
+.flex-col-8 .flex-parent .flex-children {
+  --fb-row: 100%/8;
+}
+
+.flex-spacing--no-gutters .flex-parent {
+  --flex-gap: 0rem;
+  --fb-space: 0rem;
+}
+.flex-spacing--tight .flex-parent {
+  --flex-gap: 0.5rem;
+  --fb-space: 0.5rem;
+}
+.flex-spacing--spaced .flex-parent {
+  --flex-gap: 4rem;
+  --fb-space: 4rem;
+}
+.flex-spacing--regular .flex-parent {
+  --flex-gap: 1rem;
+  --fb-space: 1rem;
+}
+
+@media screen and (min-width: 480px) {
+  .flex-parent .flex-col-xs-1.flex-children,
+  .flex-col-xs-1 .flex-parent .flex-children {
+    --fb-row: 100%/1;
+  }
+  .flex-parent .flex-col-xs-2.flex-children,
+  .flex-col-xs-2 .flex-parent .flex-children {
+    --fb-row: 100%/2;
+  }
+  .flex-parent .flex-col-xs-3.flex-children,
+  .flex-col-xs-3 .flex-parent .flex-children {
+    --fb-row: 100%/3;
+  }
+  .flex-parent .flex-col-xs-4.flex-children,
+  .flex-col-xs-4 .flex-parent .flex-children {
+    --fb-row: 100%/4;
+  }
+  .flex-parent .flex-col-xs-5.flex-children,
+  .flex-col-xs-5 .flex-parent .flex-children {
+    --fb-row: 100%/5;
+  }
+  .flex-parent .flex-col-xs-6.flex-children,
+  .flex-col-xs-6 .flex-parent .flex-children {
+    --fb-row: 100%/6;
+  }
+  .flex-parent .flex-col-xs-7.flex-children,
+  .flex-col-xs-7 .flex-parent .flex-children {
+    --fb-row: 100%/7;
+  }
+  .flex-parent .flex-col-xs-8.flex-children,
+  .flex-col-xs-8 .flex-parent .flex-children {
+    --fb-row: 100%/8;
+  }
+  .flex-spacing--xs--no-gutters .flex-parent {
+    --flex-gap: 0rem;
+    --fb-space: 0rem;
+  }
+  .flex-spacing--xs--tight .flex-parent {
+    --flex-gap: 0.5rem;
+    --fb-space: 0.5rem;
+  }
+  .flex-spacing--xs--spaced .flex-parent {
+    --flex-gap: 4rem;
+    --fb-space: 4rem;
+  }
+  .flex-spacing--xs--regular .flex-parent {
+    --flex-gap: 1rem;
+    --fb-space: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .flex-parent .flex-col-s-1.flex-children,
+  .flex-col-s-1 .flex-parent .flex-children {
+    --fb-row: 100%/1;
+  }
+  .flex-parent .flex-col-s-2.flex-children,
+  .flex-col-s-2 .flex-parent .flex-children {
+    --fb-row: 100%/2;
+  }
+  .flex-parent .flex-col-s-3.flex-children,
+  .flex-col-s-3 .flex-parent .flex-children {
+    --fb-row: 100%/3;
+  }
+  .flex-parent .flex-col-s-4.flex-children,
+  .flex-col-s-4 .flex-parent .flex-children {
+    --fb-row: 100%/4;
+  }
+  .flex-parent .flex-col-s-5.flex-children,
+  .flex-col-s-5 .flex-parent .flex-children {
+    --fb-row: 100%/5;
+  }
+  .flex-parent .flex-col-s-6.flex-children,
+  .flex-col-s-6 .flex-parent .flex-children {
+    --fb-row: 100%/6;
+  }
+  .flex-parent .flex-col-s-7.flex-children,
+  .flex-col-s-7 .flex-parent .flex-children {
+    --fb-row: 100%/7;
+  }
+  .flex-parent .flex-col-s-8.flex-children,
+  .flex-col-s-8 .flex-parent .flex-children {
+    --fb-row: 100%/8;
+  }
+  .flex-spacing--s--no-gutters .flex-parent {
+    --flex-gap: 0rem;
+    --fb-space: 0rem;
+  }
+  .flex-spacing--s--tight .flex-parent {
+    --flex-gap: 0.5rem;
+    --fb-space: 0.5rem;
+  }
+  .flex-spacing--s--spaced .flex-parent {
+    --flex-gap: 4rem;
+    --fb-space: 4rem;
+  }
+  .flex-spacing--s--regular .flex-parent {
+    --flex-gap: 1rem;
+    --fb-space: 1rem;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .flex-parent .flex-col-m-1.flex-children,
+  .flex-col-m-1 .flex-parent .flex-children {
+    --fb-row: 100%/1;
+  }
+  .flex-parent .flex-col-m-2.flex-children,
+  .flex-col-m-2 .flex-parent .flex-children {
+    --fb-row: 100%/2;
+  }
+  .flex-parent .flex-col-m-3.flex-children,
+  .flex-col-m-3 .flex-parent .flex-children {
+    --fb-row: 100%/3;
+  }
+  .flex-parent .flex-col-m-4.flex-children,
+  .flex-col-m-4 .flex-parent .flex-children {
+    --fb-row: 100%/4;
+  }
+  .flex-parent .flex-col-m-5.flex-children,
+  .flex-col-m-5 .flex-parent .flex-children {
+    --fb-row: 100%/5;
+  }
+  .flex-parent .flex-col-m-6.flex-children,
+  .flex-col-m-6 .flex-parent .flex-children {
+    --fb-row: 100%/6;
+  }
+  .flex-parent .flex-col-m-7.flex-children,
+  .flex-col-m-7 .flex-parent .flex-children {
+    --fb-row: 100%/7;
+  }
+  .flex-parent .flex-col-m-8.flex-children,
+  .flex-col-m-8 .flex-parent .flex-children {
+    --fb-row: 100%/8;
+  }
+  .flex-spacing--m--no-gutters .flex-parent {
+    --flex-gap: 0rem;
+    --fb-space: 0rem;
+  }
+  .flex-spacing--m--tight .flex-parent {
+    --flex-gap: 0.5rem;
+    --fb-space: 0.5rem;
+  }
+  .flex-spacing--m--spaced .flex-parent {
+    --flex-gap: 4rem;
+    --fb-space: 4rem;
+  }
+  .flex-spacing--m--regular .flex-parent {
+    --flex-gap: 1rem;
+    --fb-space: 1rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .flex-parent .flex-col-l-1.flex-children,
+  .flex-col-l-1 .flex-parent .flex-children {
+    --fb-row: 100%/1;
+  }
+  .flex-parent .flex-col-l-2.flex-children,
+  .flex-col-l-2 .flex-parent .flex-children {
+    --fb-row: 100%/2;
+  }
+  .flex-parent .flex-col-l-3.flex-children,
+  .flex-col-l-3 .flex-parent .flex-children {
+    --fb-row: 100%/3;
+  }
+  .flex-parent .flex-col-l-4.flex-children,
+  .flex-col-l-4 .flex-parent .flex-children {
+    --fb-row: 100%/4;
+  }
+  .flex-parent .flex-col-l-5.flex-children,
+  .flex-col-l-5 .flex-parent .flex-children {
+    --fb-row: 100%/5;
+  }
+  .flex-parent .flex-col-l-6.flex-children,
+  .flex-col-l-6 .flex-parent .flex-children {
+    --fb-row: 100%/6;
+  }
+  .flex-parent .flex-col-l-7.flex-children,
+  .flex-col-l-7 .flex-parent .flex-children {
+    --fb-row: 100%/7;
+  }
+  .flex-parent .flex-col-l-8.flex-children,
+  .flex-col-l-8 .flex-parent .flex-children {
+    --fb-row: 100%/8;
+  }
+  .flex-spacing--l--no-gutters .flex-parent {
+    --flex-gap: 0rem;
+    --fb-space: 0rem;
+  }
+  .flex-spacing--l--tight .flex-parent {
+    --flex-gap: 0.5rem;
+    --fb-space: 0.5rem;
+  }
+  .flex-spacing--l--spaced .flex-parent {
+    --flex-gap: 4rem;
+    --fb-space: 4rem;
+  }
+  .flex-spacing--l--regular .flex-parent {
+    --flex-gap: 1rem;
+    --fb-space: 1rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .flex-parent .flex-col-xl-1.flex-children,
+  .flex-col-xl-1 .flex-parent .flex-children {
+    --fb-row: 100%/1;
+  }
+  .flex-parent .flex-col-xl-2.flex-children,
+  .flex-col-xl-2 .flex-parent .flex-children {
+    --fb-row: 100%/2;
+  }
+  .flex-parent .flex-col-xl-3.flex-children,
+  .flex-col-xl-3 .flex-parent .flex-children {
+    --fb-row: 100%/3;
+  }
+  .flex-parent .flex-col-xl-4.flex-children,
+  .flex-col-xl-4 .flex-parent .flex-children {
+    --fb-row: 100%/4;
+  }
+  .flex-parent .flex-col-xl-5.flex-children,
+  .flex-col-xl-5 .flex-parent .flex-children {
+    --fb-row: 100%/5;
+  }
+  .flex-parent .flex-col-xl-6.flex-children,
+  .flex-col-xl-6 .flex-parent .flex-children {
+    --fb-row: 100%/6;
+  }
+  .flex-parent .flex-col-xl-7.flex-children,
+  .flex-col-xl-7 .flex-parent .flex-children {
+    --fb-row: 100%/7;
+  }
+  .flex-parent .flex-col-xl-8.flex-children,
+  .flex-col-xl-8 .flex-parent .flex-children {
+    --fb-row: 100%/8;
+  }
+  .flex-spacing--xl--no-gutters .flex-parent {
+    --flex-gap: 0rem;
+    --fb-space: 0rem;
+  }
+  .flex-spacing--xl--tight .flex-parent {
+    --flex-gap: 0.5rem;
+    --fb-space: 0.5rem;
+  }
+  .flex-spacing--xl--spaced .flex-parent {
+    --flex-gap: 4rem;
+    --fb-space: 4rem;
+  }
+  .flex-spacing--xl--regular .flex-parent {
+    --flex-gap: 1rem;
+    --fb-space: 1rem;
+  }
+}
+
+/*# sourceMappingURL=flex-col.css.map */

@@ -1,0 +1,92 @@
+@use "sass:list";
+@use "sass:map";
+
+// You can change or add values to $item-spacing-flags, $breakpoints, and $max-row-amount. The more values all these have, the heavier the css will get. You can also lower/remove to make an even lighter CSS.
+$item-spacing-flags: (
+	no-gutters: 0rem,
+	tight: 0.5rem,
+	spaced: 4rem,
+	regular: 1rem,
+);
+
+$breakpoints: (
+	"xs": 480px,
+	"s": 768px,
+	"m": 1366px,
+	"l": 1920px,
+	"xl": 2560px,
+);
+
+$max-row-amount: 8;
+
+@mixin breakpoints($exclude-default: false) {
+	@if ($exclude-default !=true) {
+		@content (false);
+	}
+
+	@each $breakpoint-name, $breakpoint-size in $breakpoints {
+		@media screen and (min-width: $breakpoint-size) {
+			@content ($breakpoint-name);
+		}
+	}
+}
+
+@mixin flex-col($breakpoint-name) {
+	@for $columns from 1 through $max-row-amount {
+		$flex-col: 100% / #{$columns};
+		$selector: "#{$columns}";
+
+		@if ($breakpoint-name) {
+			$selector: "#{$breakpoint-name}-#{$columns}";
+		}
+
+		@if ($breakpoint-name ==false) {
+			.flex-col-#{$columns} {
+				@extend %flex-children;
+				@extend %flex-parent;
+			}
+		}
+
+		.flex-parent .flex-col-#{$selector}.flex-children,
+		.flex-col-#{$selector} .flex-parent .flex-children {
+			--fb-row: #{$flex-col};
+		}
+	}
+}
+
+%flex-children {
+	.flex-children {
+		// Might not actually need the width, I think this was just because of Magento
+		width: 100%;
+		flex: 0 1
+			calc(var(--fb-row, 25%) * var(--fb-mod, 1) - var(--fb-space, 1rem));
+	}
+}
+
+%flex-parent {
+	.flex-parent {
+		gap: var(--flex-gap, 1rem);
+	}
+}
+
+@mixin flex-spacing($breakpoint-name) {
+	.flex-spacing {
+		@each $spacing-flag, $item-spacing in $item-spacing-flags {
+			$selector: $spacing-flag;
+
+			@if ($breakpoint-name) {
+				$selector: "#{$breakpoint-name}--#{$spacing-flag}";
+			}
+
+			&--#{$selector} .flex-parent {
+				--flex-gap: #{$item-spacing};
+				--fb-space: #{$item-spacing};
+			}
+		}
+	}
+}
+
+@include breakpoints using ($breakpoint-name) {
+	@include flex-col($breakpoint-name);
+	@include flex-spacing($breakpoint-name);
+}
