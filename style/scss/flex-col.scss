@@ -19,12 +19,23 @@ $breakpoints: (
 
 $max-row-amount: 8;
 
+.flex-item {
+	// Might not actually need the width, I think this was just because of Magento
+	flex: 0 1 calc(var(--fb-row, 25%) * var(--fb-mod, 1) - var(--fb-space, 1rem));
+}
+
+.flex-container {
+	display: flex;
+	gap: var(--flex-gap, 1rem);
+}
+
 @mixin breakpoints($exclude-default: false) {
 	@if ($exclude-default !=true) {
 		@content (false);
 	}
 
-	@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@each $breakpoint-name,
+	$breakpoint-size in $breakpoints {
 		@media screen and (min-width: $breakpoint-size) {
 			@content ($breakpoint-name);
 		}
@@ -40,45 +51,25 @@ $max-row-amount: 8;
 			$selector: "#{$breakpoint-name}-#{$columns}";
 		}
 
-		@if ($breakpoint-name ==false) {
-			.flex-col-#{$columns} {
-				@extend %flex-children;
-				@extend %flex-parent;
-			}
-		}
-
-		.flex-parent .flex-col-#{$selector}.flex-children,
-		.flex-col-#{$selector} .flex-parent .flex-children {
+		.flex-container .flex-col-#{$selector}.flex-item,
+		.flex-col-#{$selector} .flex-container .flex-item {
 			--fb-row: #{$flex-col};
 		}
 	}
 }
 
-%flex-children {
-	.flex-children {
-		// Might not actually need the width, I think this was just because of Magento
-		width: 100%;
-		flex: 0 1
-			calc(var(--fb-row, 25%) * var(--fb-mod, 1) - var(--fb-space, 1rem));
-	}
-}
-
-%flex-parent {
-	.flex-parent {
-		gap: var(--flex-gap, 1rem);
-	}
-}
-
 @mixin flex-spacing($breakpoint-name) {
 	.flex-spacing {
-		@each $spacing-flag, $item-spacing in $item-spacing-flags {
+
+		@each $spacing-flag,
+		$item-spacing in $item-spacing-flags {
 			$selector: $spacing-flag;
 
 			@if ($breakpoint-name) {
 				$selector: "#{$breakpoint-name}--#{$spacing-flag}";
 			}
 
-			&--#{$selector} .flex-parent {
+			&--#{$selector} .flex-container {
 				--flex-gap: #{$item-spacing};
 				--fb-space: #{$item-spacing};
 			}
